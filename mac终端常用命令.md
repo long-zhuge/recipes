@@ -78,3 +78,13 @@ defaults write com.apple.finder AppleShowAllFiles No && killall Finder
 ```
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES && killall Finder
 ```
+
+#### 端口查询及关闭
+
+```
+// 查询当前 8000 端口号是否在运行
+lsof -i:8000
+
+// 关闭 8000 端口号，11815 为端口号 PID
+kill 11815
+```
