@@ -22,8 +22,8 @@
 
 ![](./images/github/2.png)
 
-</details>
-<br/>
+</details><br/>
+
 > 在仓库下新建一个 index.html 页面，并开启 pages 进行查看
 
 <details>
