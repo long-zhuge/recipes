@@ -24,6 +24,7 @@
 
 </details>
 
+
 > 在仓库下新建一个 index.html 页面，并开启 pages 进行查看
 
 <details>
@@ -65,6 +66,7 @@
 </details>
 <details>
 <summary>✨ 步骤5 ✨</summary>
+
 > 查看 https://<用户id>.github.io/<项目名>/index.html<br/>
 > 本例子中的地址为：https://wb-chenlong.github.io/demo/index.html
 
@@ -116,7 +118,7 @@
 <details>
 <summary>✨ 步骤2 ✨</summary>
 
-- 为 github 仓库下添加构建脚本 `.travis.yml`
+- 为 github 仓库的根目录下添加构建脚本 `.travis.yml`
 
 ```
 language: node_js # 使用 nodejs 作为构建语言
