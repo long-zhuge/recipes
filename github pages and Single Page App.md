@@ -13,7 +13,9 @@
 
 <details>
 <summary>✨ 步骤1 ✨</summary>
+
 ![](./images/github/1.png)
+
 </details>
 <details>
 <summary>✨ 步骤2 ✨</summary>
