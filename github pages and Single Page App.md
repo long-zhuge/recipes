@@ -19,17 +19,22 @@
 </details>
 <details>
 <summary>✨ 步骤2 ✨</summary>
+
 ![](./images/github/2.png)
+
 </details>
 
 > 在仓库下新建一个 index.html 页面，并开启 pages 进行查看
 
 <details>
 <summary>✨ 步骤1 ✨</summary>
+
 ![](./images/github/3.png)
+
 </details>
 <details>
 <summary>✨ 步骤2 ✨</summary>
+
 ![](./images/github/4.png)
 
 ```
@@ -48,11 +53,15 @@
 </details>
 <details>
 <summary>✨ 步骤3 ✨</summary>
+
 ![](./images/github/5.png)
+
 </details>
 <details>
 <summary>✨ 步骤4 ✨</summary>
+
 ![](./images/github/6.png)
+
 </details>
 <details>
 <summary>✨ 步骤5 ✨</summary>
@@ -60,6 +69,7 @@
 > 本例子中的地址为：https://wb-chenlong.github.io/demo/index.html
 
 ![](./images/github/7.png)
+
 </details>
 
 ### 在仓库中创建你的单页应用
@@ -68,7 +78,9 @@
 
 <details>
 <summary>✨ 步骤1 ✨</summary>
+
 ![](./images/github/8.png)
+
 </details>
 <details>
 <summary>✨ 步骤2 ✨</summary>
@@ -81,6 +93,7 @@
 </details>
 <details>
 <summary>✨ 步骤3 ✨</summary>
+
 ![](./images/github/10.png)
 
 > 当我们访问已经加载好的页面路由时，是可以正常正常访问的，如上图。但是当我们刷新该路由页面时，发现 404 了。这是因为在该 dist 目录下，不存在 /demo/dist/qrcode 资源。这个文档，我们在后面进行解决。
@@ -93,6 +106,7 @@
 
 <details>
 <summary>✨ 步骤1 ✨</summary>
+
 ![](./images/github/11.png)
 
 - 使用 github 账号登录 Travis CI 平台
