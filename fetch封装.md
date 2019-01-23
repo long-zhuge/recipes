@@ -34,12 +34,21 @@ export default function request({ url, method = 'GET', headers, body, onStart, o
   const newOptions = { credentials: 'include', method, body, headers };
   const methodArr = ['POST', 'PUT'];
   if (methodArr.indexOf(method) > -1) {
-    newOptions.headers = {
-      Accept: 'application/json',
-      'Content-Type': 'application/json; charset=utf-8',
-      ...newOptions.headers,
-    };
-    newOptions.body = JSON.stringify(newOptions.body);
+  	 // 支持 FormData 文件上传，当 body 的入参为 FormData 时，执行此逻辑
+    if (!(newOptions.body instanceof FormData)) {
+      newOptions.headers = {
+        Accept: 'application/json',
+        'Content-Type': 'application/json; charset=utf-8',
+        ...newOptions.headers,
+      };
+      newOptions.body = JSON.stringify(newOptions.body);
+    } else {
+      // newOptions.body is FormData
+      newOptions.headers = {
+        Accept: 'application/json',
+        ...newOptions.headers,
+      };
+    }
   }
 
   // 发送请求前触发
@@ -57,7 +66,7 @@ export default function request({ url, method = 'GET', headers, body, onStart, o
         // todo: 必要的错误提示信息，如 alert(data.errorMsg)
         return onError && onError(data);
       }
-      // 都不存在，适合 services 的请求方式
+      // 都不存在，适合 async 调用
       if (data && !data.success) {
         // todo: 不要的错误提示信息，如 alert(data.errorMsg)
       }
