@@ -216,6 +216,23 @@ console.log(arr);
 // [1,4,5]
 ```
 
+### every()
+
+- 方法用于检测数组所有元素是否都符合指定条件（通过函数提供）
+- 如果数组中检测到有一个元素不满足，则整个表达式返回 false ，且剩余的元素不会再进行检测。
+- 如果所有元素都满足条件，则返回 true。
+- 不会修改原始数据
+
+```
+const arr = [1, 2, 3, 4, 5];
+arr.every(item => item < 10);
+// true
+
+const arr = [1, 11, 3, 4, 5];
+arr.every(item => item < 10);
+// false
+```
+
 ### remove(index)
 
 - 无此对象方法，通过 prototype 属性添加一个吧
