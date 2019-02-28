@@ -197,6 +197,20 @@ export function formatMoney(money) {
 }
 ```
 
+#### 数字千位符过滤，保留原有小数点
+
+```
+export function toThousands(num) {
+  if (num === undefined) {
+    return 0;
+  }
+  const strArr = (`${num}`).split('.');
+  const integer = (+strArr[0]).toLocaleString('en-US');
+
+  return strArr[1] ? `${integer}.${strArr[1]}` : integer;
+}
+```
+
 #### 字符串按照字节数来截取，中文算2个字节，截取奇数时会有问题，＊慎用＊
 
 ```
@@ -236,5 +250,38 @@ function getScrollOffsets(w){
 function getRating(rating) {
     if(rating > 5 || rating < 0) throw new Error('数字不在范围内');
     return '★★★★★☆☆☆☆☆'.substring(5 - rating, 10 - rating );
+}
+```
+
+#### 文件流异步下载
+
+```
+export function fileDownloadBlob(url) {
+  return fetch(url).then(res => res.blob().then(blob => {
+    const a = document.createElement('a');
+    document.body.appendChild(a);
+    // 获取 blob 本地文件连接 (blob 为纯二进制对象，不能够直接保存到磁盘上)
+    const blobUrl = window.URL.createObjectURL(blob);
+    // 获取 headers 中的文件名
+    const filename = res.headers.get('Content-Disposition');
+    a.href = blobUrl;
+    a.download = filename;
+    a.click();
+    window.URL.revokeObjectURL(blobUrl);
+    a.remove();
+  }))
+}
+```
+
+#### 模拟点击下载文件
+
+```
+export function fileDownload() {
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = url.split('/').pop(); // 自定义文件名，一般是 url 最后位
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
 }
 ```
