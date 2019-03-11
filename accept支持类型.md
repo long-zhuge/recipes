@@ -52,3 +52,4 @@
 | ac3 |audio/ac3|
 |3gpp|audio/3gpp|video/3gpp|
 |svg|application/vnd.oipf.dae.svg+xml||
+|bmp|image/x-ms-bmp'||

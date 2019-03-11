@@ -92,7 +92,7 @@ git push origin power:power
 git push origin --delete <分支>
 
 // 删除本地分支
-git branch -d <分支>
+git branch -D <分支>
 ```
 
 #### git merge

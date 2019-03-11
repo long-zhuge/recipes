@@ -201,7 +201,7 @@ export function formatMoney(money) {
 
 ```
 export function toThousands(num) {
-  if (num === undefined) {
+  if (!num) {
     return 0;
   }
   const strArr = (`${num}`).split('.');
