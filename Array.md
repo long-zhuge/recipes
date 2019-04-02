@@ -310,3 +310,26 @@ const arr = [{ name: 'Tom' }, { name: 'Sam' }, ...];
 arr.removeId('name', 'Tom');
 // [{ name: 'Sam' }, ...]
 ```
+
+### 查询元素的下标
+
+```
+Array.prototype.indexVf = function(arr){
+  let num = null;
+  this.some((item, index) => {
+    if (item === arr) {
+      num = index;
+      return true;
+    }
+    return false;
+  });
+
+  return num;
+};
+
+const arr = [1,2,3,4,5];
+arr.indexVf(2);
+arr.indexVf(6);
+// 1
+// null
+```

@@ -6,7 +6,7 @@
 |mkdir|创建目录|mkdir dirname|
 |rmdir|删除目录|rm -r -f dist|
 |mvdir|移动或重命名目录|mv dir1 dir2|
-|cd|改变当前目录|cd dirname|
+|cd|改变当前目录|cd dirname，cd /(返回根目录)|
 |pwd|显示当前目录的路径名|pwd|
 |ls|显示当前目录内容|ls|
 |**文件操作**|||
