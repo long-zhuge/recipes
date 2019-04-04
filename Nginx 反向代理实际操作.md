@@ -23,3 +23,18 @@
 	}
 	```
 4. 重启 nginx：/nginx -s reload
+5. 查看实时日志
+	- 定位日志输出位置，查看 nginx 目录下的 nginx.conf
+	
+	```
+	http {
+		access_log  /var/log/nginx/access.log  main;
+	}
+	```
+	
+	- 查看实时日志
+
+	```
+	// 进入 /var/log/nginx 目录
+	tail -f access.log
+	```

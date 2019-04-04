@@ -8,10 +8,10 @@
 ### 图像等级
 
 - Drawing - 安全的
-- Hentai - 色情的
+- Hentai - 变态色情的
 - Neutral - 中性的
-- Porn - 色情图片，性图片
-- Sexy - 色情图片，但不是色情作品
+- Porn - 色情的
+- Sexy - 性感的
 
 ### demo 搭建
 
