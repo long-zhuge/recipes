@@ -1,5 +1,8 @@
 ### git命令
 
+#### create keys
+	ssh-keygen -t rsa
+
 #### git init
 	在目录中创建git仓库
 	
@@ -199,3 +202,18 @@ vim .gitconfig
 	```
 	git config core.ignorecase false
 	```
+	
+#### 将本地公钥添加到远程服务器的 shh 上
+
+```
+ssh-copy-id -i ~/.ssh/id_rsa.pub <用户名>@<服务器ip>
+
+// 指定端口
+ssh-copy-id -i ~/.ssh/id_rsa.pub -p <端口号> <用户名>@<服务器ip>
+```
+
+#### git 仓库端口号不为 22 时
+
+```
+git remote set-url origin ssh://git@gitlab.abssqr.cn:3049/chenlong/formula.git
+```

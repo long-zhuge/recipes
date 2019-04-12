@@ -22,7 +22,9 @@
     	}
 	}
 	```
-4. 重启 nginx：/nginx -s reload
+4. 重启（修改配置后）：/nginx -s reload
+5. 停止：nginx -s stop
+6. 启动：nginx
 5. 查看实时日志
 	- 定位日志输出位置，查看 nginx 目录下的 nginx.conf
 	
