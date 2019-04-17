@@ -48,7 +48,7 @@ $ npm init
 #### 安装 webpack && webpack-cli
 
 ```
-$ cnpm install --save-dev webpack webpack-cli
+$ cnpm install --save-dev webpack@4.8.3 webpack-cli@2.1.3
 ```
 
 #### 创建配置文件
@@ -139,7 +139,7 @@ $ webpack
 插件安装
 
 ```
-$ cnpm install --save-dev html-webpack-plugin
+$ cnpm install --save-dev html-webpack-plugin@3.2.0
 ```
 
 webpack.config.js
@@ -209,7 +209,7 @@ $ webpack
 插件安装
 
 ```
-$ cnpm install --save-dev clean-webpack-plugin
+$ cnpm install --save-dev clean-webpack-plugin@0.1.19
 ``` 
 
 webpack.config.js
@@ -247,7 +247,7 @@ module.exports = {
 插件安装
 
 ```
-$ cnpm install --save-dev webpack-dev-server
+$ cnpm install --save-dev webpack-dev-server@3.1.4
 ```
 
 webpack.config.js
@@ -462,7 +462,7 @@ render(<Main />, document.getElementById('root'));
 安装依赖
 
 ```
-cnpm install --save-dev style-loader css-loader
+cnpm install --save-dev style-loader@0.21.0 css-loader@0.28.11
 ```
 
 webpack.config.js
@@ -570,7 +570,7 @@ cnpm start 进行查看，可以看到类名后生成了随机码，如下图：
 安装依赖
 
 ```
-cnpm install --save-dev less less-loader
+cnpm install --save-dev less@3.0.4 less-loader@4.1.0
 ```
 
 新建 src/Main2.less
@@ -642,7 +642,7 @@ export default Main;
 安装依赖
 
 ```
-cnpm install --save-dev mini-css-extract-plugin
+cnpm install --save-dev mini-css-extract-plugin@0.4.0
 ```
 
 webpack.config.js
@@ -716,7 +716,7 @@ module.exports = {
 安装依赖
 
 ```
-cnpm install --save-dev webpack-api-mocker
+cnpm install --save-dev webpack-api-mocker@1.5.15
 ```
 
 添加 proxy.config.js 配置文件
@@ -853,7 +853,7 @@ module.exports = {
 安装依赖
 
 ```
-cnpm install --save-dev babel-plugin-module-resolver
+cnpm install --save-dev babel-plugin-module-resolver@3.1.1
 ```
 
 .babelrc

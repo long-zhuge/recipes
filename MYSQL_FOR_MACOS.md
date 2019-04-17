@@ -304,3 +304,34 @@ mysql> CREATE TABLE tb5(
 // 查看
 mysql> SHOW COLUMNS FROM tb5;
 ```
+
+### 数据库用户查询和新增
+
+```
+// 查询能操作 mysql 的用户
+mysql> select user,host form mysql.user;
+
++-----------+-----------+
+| user      | host      |
++-----------+-----------+
+| admin     | %         |
+| foodpanel | %         |
+| mysql.sys | localhost |
+| root      | localhost |
++-----------+-----------+
+
+// 查询 foodpanel 用户能操作的数据库
+mysql> show grants for foodpanel;
+
++-----------------------------------------------------------+
+| Grants for foodpanel@%                                    |
++-----------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'foodpanel'@'%'                     |
+| GRANT ALL PRIVILEGES ON `foodpanel`.* TO 'foodpanel'@'%'  |
+| GRANT ALL PRIVILEGES ON `rdassist`.* TO 'foodpanel'@'%'   |
+| GRANT ALL PRIVILEGES ON `hanquality`.* TO 'foodpanel'@'%' |
++-----------------------------------------------------------+
+
+// 将 foodpanel 用户添加到 xxx 数据库中
+mysql> grant all privileges on <数据库名>.* to 'foodpanel'@'%';
+```
