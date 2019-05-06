@@ -25,7 +25,7 @@
 4. 重启（修改配置后）：/nginx -s reload
 5. 停止：nginx -s stop
 6. 启动：nginx
-5. 查看实时日志
+7. 查看实时日志
 	- 定位日志输出位置，查看 nginx 目录下的 nginx.conf
 	
 	```
@@ -40,3 +40,11 @@
 	// 进入 /var/log/nginx 目录
 	tail -f access.log
 	```
+
+### 常见命令
+
+查看机器在执行的端口情况
+
+```
+$ netstat -tunpl
+```
