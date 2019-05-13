@@ -1193,6 +1193,25 @@ package.json 中添加命令
 
 ![](./images/webpack_demo/8.jpg)
 
+#### 可能的报错，以及解决方案
+
+<span style="color: red">error: </span>Plugin/Preset files are not allowed to export objects, only functions. 
+
+```
+// 升级 babel 到 7+
+"@babel/cli": "^7.4.4",
+"@babel/core": "^7.2.2",
+"@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+"@babel/preset-env": "^7.3.1",
+"@babel/preset-react": "^7.0.0",
+
+// 修改 .babelrc
+{
+  "presets": ["@babel/react", "@babel/env"],
+  "plugins": ["@babel/plugin-proposal-object-rest-spread"]
+}
+```
+
 ### TypeScript
 
 安装依赖
