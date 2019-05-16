@@ -334,4 +334,7 @@ mysql> show grants for foodpanel;
 
 // 将 foodpanel 用户添加到 xxx 数据库中
 mysql> grant all privileges on <数据库名>.* to 'foodpanel'@'%';
+
+// 将 foodpanel 用户从 xxx 数据库中移除
+mysql> revoke all privileges on <数据库名>.* from 'foodpanel'@'%';
 ```
