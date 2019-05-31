@@ -18,6 +18,16 @@
 
 - componentDidMount
 	- 真实的DOM被渲染出来后调用，在该方法中可通过this.getDOMNode()访问到真实的DOM元素。此时已可以使用其他类库来操作这个DOM。
+	- 还可以使用 ref 来获取 dom
+	
+		```
+		<audio loop="loop" hidden ref="audio">
+			<source src="./rain.mp4" type="audio/mp4" />
+		</audio>
+		
+		// 调用
+		this.refs.audio.play();
+		```
 
 - componentDidCatch
 	- v16 新特性
@@ -124,7 +134,7 @@
     1. dangerouslySetInnerHTML={{ __html: xxxxx }}
         - react默认以字符串形式输出，该方法可以将字符串中的标签，转义字符等以正确的方式展示到页面上
 
-### 设置并获取
+### state 的设置和获取
 
 ```
 state = {
