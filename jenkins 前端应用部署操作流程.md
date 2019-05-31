@@ -69,3 +69,13 @@
 	}
 	```
 5. 重启 nginx
+
+### 后端部署遇到的问题
+
+1. 启动类不存在，请检查启动类名称
+
+	```
+	根目录下 pom.xml 中 ruiyi.auto.test.version 的版本号未升级
+	```
+
+2. dockerfile 和 yml 的端口不一致导致请求 500
