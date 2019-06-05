@@ -69,6 +69,8 @@
 	}
 	```
 5. 重启 nginx
+	- 切换到路径：/usr/local/nginx
+	- 运行：./sbin/nginx -s reload
 
 ### 后端部署遇到的问题
 
