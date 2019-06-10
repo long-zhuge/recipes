@@ -49,6 +49,9 @@
 // 查看所有端口执行情况
 $ netstat -tunpl
 
+// 查看监听的端口号
+$ netstat -lanput
+
 // 查看 8072 执行情况
-$ ps -ef |grep 8072
+$ ps -ef | grep 8090
 ```
