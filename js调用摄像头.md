@@ -25,45 +25,45 @@ const openBtn = document.getElementById('open');
 const closeBtn = document.getElementById('close');
 
 const startMedia = () => {
-	const constraints = {
-	  audio: false, // 是否打开语音
-	  video: true, // 是否打开视频
-	};
-	let userMedia = null; // media 对象
-	if (navigator.mediaDevices.getUserMedia) {
-	  // 最新标准 API
-	  userMedia = navigator.mediaDevices.getUserMedia(constraints);
-	} else if (navigator.webkitGetUserMedia) {
-	  // webkit 内核浏览器
-	  userMedia = navigator.webkitGetUserMedia(constraints);
-	} else if (navigator.mozGetUserMedia) {
-	  // Firefox 浏览器
-	  userMedia = navigator.mozGetUserMedia(constraints);
-	} else if (navigator.getUserMedia) {
-	  // 旧版 API
-	  userMedia = navigator.getUserMedia(constraints);
-	}
-	// 此时 userMedia 是一个 promise 对象
-	userMedia.then((stream) => {
-	  // 成功后返回的业务逻辑
-	  videoNode.srcObject = stream;
-	  videoNode.play();
-	  videoStream = stream;
-	}).catch((error) => {
-	  console.error('navigator.getUserMedia error: ', error);
-	});
+  const constraints = {
+    audio: false, // 是否打开语音
+    video: true, // 是否打开视频
+  };
+  let userMedia = null; // media 对象
+  if (navigator.mediaDevices.getUserMedia) {
+    // 最新标准 API
+    userMedia = navigator.mediaDevices.getUserMedia(constraints);
+  } else if (navigator.webkitGetUserMedia) {
+    // webkit 内核浏览器
+    userMedia = navigator.webkitGetUserMedia(constraints);
+  } else if (navigator.mozGetUserMedia) {
+    // Firefox 浏览器
+    userMedia = navigator.mozGetUserMedia(constraints);
+  } else if (navigator.getUserMedia) {
+    // 旧版 API
+    userMedia = navigator.getUserMedia(constraints);
+  }
+  // 此时 userMedia 是一个 promise 对象
+  userMedia.then((stream) => {
+    // 成功后返回的业务逻辑
+    videoNode.srcObject = stream;
+    videoNode.play();
+    videoStream = stream;
+  }).catch((error) => {
+    console.error('navigator.getUserMedia error: ', error);
+  });
 };
 
 // 打开的按钮
 openBtn.onclick = () => {
-	startMedia();
+  startMedia();
 };
 
 // 关闭的按钮
 closeBtn.onclick = () => {
-   // tracks 是一个数组，可能包含 audio、video 对象
-	const tracks = videoStream.getTracks();
-	tracks[0].stop();
+  // tracks 是一个数组，可能包含 audio、video 对象
+  const tracks = videoStream.getTracks();
+  tracks[0].stop();
 };
 ```
 
