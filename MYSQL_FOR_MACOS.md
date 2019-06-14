@@ -309,7 +309,7 @@ mysql> SHOW COLUMNS FROM tb5;
 
 ```
 // 查询能操作 mysql 的用户
-mysql> select user,host form mysql.user;
+mysql> select user,host from mysql.user;
 
 +-----------+-----------+
 | user      | host      |
