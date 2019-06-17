@@ -101,3 +101,23 @@ chmod -R 777 html
 cd html
 ls -l
 ```
+
+#### 查看所有端口执行情况
+
+```
+$ netstat -tunpl
+// or
+$ netstat -lanput
+```
+
+#### 查看端口 8072 执行情况
+
+```
+$ ps -ef | grep 8090
+```
+
+#### 杀进程
+
+```
+$ Kill -9 <进程号>
+```

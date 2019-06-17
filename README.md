@@ -19,7 +19,7 @@
 - [H5 clipborad](./H5_clipborad.md)
 - [html 空格符](./html_空格符.md)
 - [js 原生拖拽实现](./js原生拖拽实现.md)
-- [mac终端常用命令](./mac终端常用命令.md)
+- [Linux终端常用命令](./Linux终端常用命令.md)
 - [MYSQL FOR MACOS](./MYSQL_FOR_MACOS.md)
 - [npm publish](./npm_publish.md)
 - [Promise](./Promise.md)
