@@ -233,6 +233,15 @@ arr.every(item => item < 10);
 // false
 ```
 
+### reverse()
+
+- 将数组倒序，会修改原始数据
+
+```
+var a = [1,2,3,4,5,6];
+a.reverse(); // [6,5,4,3,2,1]
+```
+
 ### remove(index)
 
 - 无此对象方法，通过 prototype 属性添加一个吧
