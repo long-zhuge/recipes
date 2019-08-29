@@ -145,6 +145,9 @@ git pop
 
 // 当多次执行 stash 时，可查看列表
 git stash list
+
+// 删除第一个
+git stash drop stash@{0}
 ```
 
 #### git tag
