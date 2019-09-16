@@ -25,7 +25,7 @@
 - [Promise](./Promise.md)
 - [React-markdown](./React-markdown.md)
 - [React](./React.md)
-- [rules](./rules.md)
+- [RegExp](./RegExp.md)
 - [utils](./utils.md)
 - [webpack入门，简单搭建一个脚手架](./webpack入门.md)
 - [webstorm](./webstorm.md)
