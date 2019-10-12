@@ -56,9 +56,27 @@ git push origin HEAD --force
 	创建分支：git branch xxx [创建名称为xxx的分支]
 
 #### git checkout
-	切换分支：git checkout master［将分支切换到master］
-	创建分支并切换到该分支：git checkout -b xxx
-	创建分支并切换到远程分支：git checkout -b AAA origin/分支名
+
+```
+// 切换分支，切换到 master
+$ git checkout master
+
+// 强制切换分支
+$ git checkout -f master
+
+// 创建分支并切换到该分支
+$ git checkout -b <分支名>
+
+// 创建分支并切换到远程分支
+$ git checkout -b <分支名> origin/<分支名>
+
+// 撤销某个文件的修改，前提是没有 add
+$ git status // 查看工作状态
+$ git checkout <文件路径>
+
+// 撤销所有文件的修改
+$ git checkout .
+```
 	
 #### git push
 

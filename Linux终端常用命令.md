@@ -122,6 +122,12 @@ $ netstat -lanput
 $ ps -ef | grep 8090
 ```
 
+#### 查看 jar 包运行情况
+
+```
+$ jps -l
+```
+
 #### 杀进程
 
 ```
