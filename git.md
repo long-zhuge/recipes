@@ -238,3 +238,19 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub -p <端口号> <用户名>@<服务器ip>
 ```
 git remote set-url origin ssh://git@gitlab.abssqr.cn:3049/chenlong/formula.git
 ```
+
+#### 展示当前最新的tag
+
+```
+// 此命令会获取本地最新的 tag
+$ git describe --tags `git rev-list --tags --max-count=1`
+
+// 如果本地 tag 和远程 tag 不相符。那么可以这样做
+// 删除本地全部 tag
+$ git tag -l|xargs git tag -d
+
+// 更新本地仓库的内容
+$ git fetch --all
+
+// 此时再运行第一条命令就是最新的 tag 版本号
+```

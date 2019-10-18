@@ -122,6 +122,25 @@ $ netstat -lanput
 $ ps -ef | grep 8090
 ```
 
+#### 获取端口 8072 执行情况的参数
+
+```
+执行
+$ netstat -lanput | grep 8072
+// 打印
+tcp  0  0  0.0.0.0:8070  0.0.0.0:*  LISTEN  29692/java
+
+// 获取 29692/java 参数
+$ netstat -lanput | grep 8070 | awk '{print $7}'
+// 打印
+29692/java
+
+// 如果想获取 java 参数
+$ netstat -lanput | grep 8070 | awk '{print $7}' | awk -F'/' '{print $2}'
+// 打印
+java
+```
+
 #### 查看 jar 包运行情况
 
 ```
