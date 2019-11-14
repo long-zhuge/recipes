@@ -2,6 +2,7 @@
 
 ```
 // accept = 'image/jpeg, image/png';
+accept = 'image/*'; // 全图片类型
 ```
 
 |文件类型|属性值|备选属性值|
