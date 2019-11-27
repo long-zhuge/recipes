@@ -14,7 +14,7 @@ wget https://linezone-bucket1.oss-cn-hangzhou.aliyuncs.com/jdk1.8.0_191.zip && u
 
 ```
 // 安装
-& yum install -y epel-release nginx@1.12.2
+& yum install -y epel-release nginx
 
 // 查看 nginx 执行包
 $ which nginx
@@ -22,7 +22,7 @@ $ which nginx
 // 启动
 $ systemctl enable nginx && systemctl start nginx
 
-// 如果删除了 nginx/html 下的文件，在 start 时会报错。删除 nginx.conf 配置中 server 大段  
+// 如果删除了 nginx/html 下的文件，在 start 时会报错。删除 nginx.conf 配置中 server 大段
 
 // 执行 nginx 操作
 $ nginx -s reload
