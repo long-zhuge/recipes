@@ -1,5 +1,11 @@
 ## centos软件安装
 
+#### 安装 wget
+
+```
+$ yum -y install wget
+```
+
 #### 安装 Java
 
 ```
@@ -10,11 +16,11 @@ $ jave
 wget https://linezone-bucket1.oss-cn-hangzhou.aliyuncs.com/jdk1.8.0_191.zip && unzip jdk1.8.0_191.zip -d /usr/local/ && chmod +x /usr/local/jdk1.8.0_191/bin/* && echo 'export JAVA_HOME=/usr/local/jdk1.8.0_191' >> /etc/bashrc  && echo 'export PATH=$PATH:$JAVA_HOME/bin' >> /etc/bashrc && bash && java
 ```
 
-#### Nginx
+#### nginx
 
 ```
 // 安装
-& yum install -y epel-release nginx
+& yum install -y epel-release nginx-1.12.2
 
 // 查看 nginx 执行包
 $ which nginx
@@ -22,7 +28,7 @@ $ which nginx
 // 启动
 $ systemctl enable nginx && systemctl start nginx
 
-// 如果删除了 nginx/html 下的文件，在 start 时会报错。删除 nginx.conf 配置中 server 大段
+// 如果删除了 nginx/html 下的文件，在 start 时会报错。删除 nginx.conf 配置中 server 大段  
 
 // 执行 nginx 操作
 $ nginx -s reload
