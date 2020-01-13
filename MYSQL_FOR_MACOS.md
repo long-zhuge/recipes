@@ -344,3 +344,21 @@ mysql> revoke all privileges on <数据库名>.* from 'foodpanel'@'%';
 ```
 truncate table fc_food_laws;
 ```
+
+### 备份
+
+> 登录服务器的情况下
+
+```
+// 备份整个数据库
+$ mysqldump -u<账号> -p'<密码>' <dbname> > backdb.sql
+
+// 备份数据库中的某个表
+$ mysqldump -u<账号> -p'<密码>' <dbname> <table1>, <table2> > backdb.sql
+
+// 备份多个数据库
+$ mysqldump -u<账号> -p'<密码>' --databases <dbname1>, <dbname2> > backdb.sql
+
+// 备份系统中所有数据库
+$ mysqldump -u<账号> -p'<密码>' --all-databases > backdb.sql
+```
