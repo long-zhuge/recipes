@@ -29,9 +29,19 @@
 ```
 // 启动
 $ mysql.server start
+or
+$ systemctl start mysqld.service
 
 // 停止
 $ mysql.server stop
+or
+$ systemctl stop mysqld.service
+
+// 重置配置
+$ systemctl restart mysqld
+
+// 查看状态
+$ systemctl status mysqld
 ```
 
 ### mysql 登录／退出
@@ -362,3 +372,38 @@ $ mysqldump -u<账号> -p'<密码>' --databases <dbname1>, <dbname2> > backdb.sq
 // 备份系统中所有数据库
 $ mysqldump -u<账号> -p'<密码>' --all-databases > backdb.sql
 ```
+
+### 允许 root 用户外部链接
+
+```
+mysql>use mysql;
+mysql>update user set host = '%' where user ='root';
+mysql>flush privileges;
+mysql>quit;
+```
+
+### 指定端口号
+
+```
+$ vi /etc/my.conf
+
+// 新增
+port=3307
+
+// 保存后重启
+```
+
+### Access denied for user 'root'@'localhost'
+
+1. 在 /etc/my.cnf 中任意行增加语句 "skip-grant-tables"
+    - 表示后台运行的意思
+2. 重启mysql
+2. 直接命令 mysql 登录，此时不需要密码
+3. 重置密码
+
+    ```
+    mysql > use mysql;
+    mysql > update mysql.user set authentication_string=password('你的密码') where user='root';
+    mysql > flush privileges;
+    mysql > exit;
+    ```
