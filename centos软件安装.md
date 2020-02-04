@@ -20,7 +20,7 @@ wget https://linezone-bucket1.oss-cn-hangzhou.aliyuncs.com/jdk1.8.0_191.zip && u
 
 ```
 // 安装
-& yum install -y epel-release nginx-1.12.2
+& yum install -y epel-release nginx
 
 // 查看 nginx 执行包
 $ which nginx
