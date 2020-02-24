@@ -347,6 +347,9 @@ mysql> grant all privileges on <数据库名>.* to 'foodpanel'@'%';
 
 // 将 foodpanel 用户从 xxx 数据库中移除
 mysql> revoke all privileges on <数据库名>.* from 'foodpanel'@'%';
+
+// 最好生效设置
+mysql> flush privileges;
 ```
 
 ### 清空表数据-navicat
