@@ -183,3 +183,13 @@ $ du -sh ./*
 ```
 $ top
 ```
+
+#### 禁止 adobe 远程服务
+
+```
+// 关闭
+launchctl unload -w /Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist
+
+// 开启
+launchctl load -w /Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist
+```
