@@ -1,30 +1,14 @@
 > 在 ssh 连接远程服务器时，中文会乱码，这是因为本地 iterm2 和远程服务器的字符集不同，一般远程的 linux 服务器的字符集是 UTF-8。
 
-查看 iterm2 配置，打开终端，输入以下命令：
+- 首先检查设置是否正确，Preferences => Terminal
+  - 看下 Character Encoding 是否为 Unicode(UTF-8)
 
-```
-$ locale
-
-// 显示
-LANG=
-LC_COLLATE="C"
-LC_CTYPE="UTF-8"
-LC_MESSAGES="C"
-LC_MONETARY="C"
-LC_NUMERIC="C"
-LC_TIME="C"
-LC_ALL=
-```
-
-添加配置
-
-```
-$ vim ~/.zshrc
-
-// 添加，并保存退出
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-// 生效设置
-$ source ~/.zshrc
-```
+- 修改 ssh_config 配置
+    
+    ```
+    // 终端输入
+    sudo vi /etc/ssh/ssh_config
+    
+    // 添加代码，并保存退出
+    SendEnv LANG LC_ALL=en.US.UTF-8
+    ```
