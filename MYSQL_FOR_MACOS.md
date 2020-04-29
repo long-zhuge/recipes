@@ -410,3 +410,9 @@ port=3307
     mysql > flush privileges;
     mysql > exit;
     ```
+
+### 清空数据表，保留表结构
+
+```
+TRUNCATE TABLE <tablename>;
+```

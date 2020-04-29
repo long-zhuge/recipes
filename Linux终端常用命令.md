@@ -193,3 +193,10 @@ launchctl unload -w /Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist
 // 开启
 launchctl load -w /Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist
 ```
+#### 查看隐藏文件大小
+
+```
+// cd 到对应目录，如：
+$ cd /var/lib/jenkins
+$ du -sh .[!.]* * | sort -hr
+```
