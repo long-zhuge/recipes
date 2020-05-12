@@ -200,3 +200,10 @@ launchctl load -w /Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist
 $ cd /var/lib/jenkins
 $ du -sh .[!.]* * | sort -hr
 ```
+
+#### 服务器免密登录
+
+```
+// 需要先登录 A 服务器，在执行下面命令，其中 125.124.21.221 为B服务器
+$ ssh-copy-id -p 22 root@125.124.21.221
+```
