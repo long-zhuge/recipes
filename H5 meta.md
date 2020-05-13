@@ -11,7 +11,7 @@
 <meta name="robots" content="index,follow"/>  搜索引擎抓取
 <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no"> 为移动设备添加 viewport
 <meta name="apple-mobile-web-app-title" content="标题"> iOS 设备 begin
-<meta name="apple-mobile-web-app-capable" content="yes"/>  是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏
+<meta name="apple-mobile-web-app-capable" content="yes"/>  是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏。注意，需要将网页添加到主屏幕中才能生效。
 <meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL">  添加智能 App 广告条 Smart App Banner（iOS 6+ Safari）
 <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 <meta name="format-detection" content="telphone=no, email=no"/>  设置苹果工具栏颜色
