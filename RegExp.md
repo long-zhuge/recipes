@@ -70,3 +70,4 @@
 |中国邮政编码|`[1-9]\d{5}(?!\d)`|中国邮政编码为6位数字|
 |IP地址|`\d+\.\d+\.\d+\.\d+`|提取IP地址时有用|
 |emoji|`/\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDE4F]/g`||
+|获取年月日|`/(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/gu`|String.match(regexp)|

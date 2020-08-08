@@ -46,6 +46,7 @@ accept = 'image/*'; // 全图片类型
 | dtd |application/xml-dtd|
 | dot |application/msword|
 | doc |application/msword|
+| docx |application/vnd.openxmlformats-officedocument.wordprocessingml.document|
 | csv |text/csv|
 | css |text/css|
 | au |audio/basic|
