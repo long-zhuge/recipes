@@ -20,6 +20,9 @@ $ cd /opt/nexus-3.13.0-01/bin/
 // 注意，启动后需要过一会才能访问到页面，时间可能较久
 $ ./nexus start
 
+// 如果 start 启动不了
+$ ./nexus run &
+
 // 关闭
 $ ./nexus stop
 ```

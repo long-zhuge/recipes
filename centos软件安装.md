@@ -6,6 +6,12 @@
 $ yum -y install wget
 ```
 
+#### 安装 zip/unzip
+
+```
+$ yum install -y unzip zip
+```
+
 #### 安装 Java
 
 ```
@@ -46,4 +52,44 @@ wget https://nodejs.org/download/release/v8.9.4/node-v8.9.4-linux-x64.tar.gz -O 
 
 ```
 npm install forever -g && ln -snf /usr/local/node-v8.9.4-linux-x64/bin/forever /usr/bin
+```
+
+#### htop
+
+```
+yum -y install epel-release
+yum -y install htop
+```
+
+```
+PID：进行的标识号
+USER：运行此进程的用户
+PRI：进程的优先级
+NI：进程的优先级别值，默认的为0，可以进行调整
+VIRT：进程占用的虚拟内存值
+RES：进程占用的物理内存值
+SHR：进程占用的共享内存值
+S：进程的运行状况，R表示正在运行、S表示休眠，等待唤醒、Z表示僵死状态
+%CPU：该进程占用的CPU使用率
+%MEM：该进程占用的物理内存和总内存的百分比
+TIME+：该进程启动后占用的总的CPU时间
+COMMAND：进程启动的启动命令名称
+```
+
+#### 安装 redis
+
+```
+$ wget https://download.redis.io/releases/redis-6.0.8.tar.gz
+$ tar xzf redis-6.0.8.tar.gz
+$ cd redis-6.0.8
+$ make
+
+// 后台启动
+$ vim redis.conf
+
+// 修改
+daemonize=yes
+
+// 保存后重启启动
+$ ./src/redis.server
 ```

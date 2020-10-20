@@ -12,7 +12,6 @@
 
 - 在 mac 下，环境变量位于 /etc/profile 文件中
 - 如何添加环境变量，请看以下事例：
-
 ```
 // 以添加 mysql 为例
 
@@ -67,6 +66,12 @@ mysql>
 mysql> exit;
 mysql> quit;
 mysql> \q;
+```
+
+### 修改当前账号密码
+
+```
+$ ALTER USER USER() IDENTIFIED BY '(saBz35tszyF';
 ```
 
 ### 忘记密码
@@ -318,6 +323,9 @@ mysql> SHOW COLUMNS FROM tb5;
 ### 数据库用户查询和新增
 
 ```
+// 创建用户
+mysql> create user 'username'@'%' identified by 'password';
+
 // 查询能操作 mysql 的用户
 mysql> select user,host from mysql.user;
 
@@ -415,4 +423,14 @@ port=3307
 
 ```
 TRUNCATE TABLE <tablename>;
+```
+
+### Host is not allowed to connect to this MySQL server
+
+> 本地可以登录，远程登录不了
+
+```
+use mysql;
+update user set host = '%' where user = 'root';
+FLUSH PRIVILEGES;
 ```
