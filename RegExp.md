@@ -71,4 +71,4 @@
 |IP地址|`\d+\.\d+\.\d+\.\d+`|提取IP地址时有用|
 |emoji|`/\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDE4F]/g`||
 |获取年月日|`/(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/gu`|String.match(regexp)|
-|统一社会信用代码|`/[^_IOZSVa-z\W]{2}\d{6}[^_IOZSVa-z\W]{10}$/g`|RegExpObject.test(string)|
+|统一社会信用代码|`/^([0-9A-HJ-NPQRTUWXY]{2}\d{6}[0-9A-HJ-NPQRTUWXY]{10}|[1-9]\d{14})$/`|RegExpObject.test(string)|
