@@ -358,6 +358,9 @@ mysql> revoke all privileges on <数据库名>.* from 'foodpanel'@'%';
 
 // 最好生效设置
 mysql> flush privileges;
+
+// 删除用户
+mysql> DROP USER <用户名>
 ```
 
 ### 清空表数据-navicat

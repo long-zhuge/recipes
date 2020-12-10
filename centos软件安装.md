@@ -43,7 +43,7 @@ $ nginx -s reload
 #### 安装 Node
 
 ```
-wget https://nodejs.org/download/release/v8.9.4/node-v8.9.4-linux-x64.tar.gz -O /usr/local/node-v8.9.4-linux-x64.tar.gz && tar -xf /usr/local/node-v8.9.4-linux-x64.tar.gz -C /usr/local/ && ln -snf /usr/local/node-v8.9.4-linux-x64/bin/node /usr/bin/ && ln -snf /usr/local/node-v8.9.4-linux-x64/bin/npm /usr/bin/ && ln -snf /usr/local/node-v8.9.4-linux-x64/bin/npx /usr/bin/ && npm install -g pm2 --registry=https://registry.npm.taobao.org && npm install -g cnpm --registry=https://registry.npm.taobao.org && ln -snf /usr/local/node-v8.9.4-linux-x64/bin/pm2 /usr/bin && ln -snf /usr/local/node-v8.9.4-linux-x64/bin/cnpm /usr/bin
+wget https://nodejs.org/download/release/v12.18.4/node-v12.18.4-linux-x64.tar.gz -O /usr/local/node-v12.18.4-linux-x64.tar.gz && tar -xf /usr/local/node-v12.18.4-linux-x64.tar.gz -C /usr/local/ && ln -snf /usr/local/node-v12.18.4-linux-x64/bin/node /usr/bin/ && ln -snf /usr/local/node-v12.18.4-linux-x64/bin/npm /usr/bin/ && ln -snf /usr/local/node-v12.18.4-linux-x64/bin/npx /usr/bin/ && npm install -g pm2 --registry=https://registry.npm.taobao.org && npm install -g cnpm --registry=https://registry.npm.taobao.org && ln -snf /usr/local/node-v12.18.4-linux-x64/bin/pm2 /usr/bin && ln -snf /usr/local/node-v12.18.4-linux-x64/bin/cnpm /usr/bin
 ```
 
 #### 安装 forever
@@ -51,7 +51,7 @@ wget https://nodejs.org/download/release/v8.9.4/node-v8.9.4-linux-x64.tar.gz -O 
 > node 进程守护
 
 ```
-npm install forever -g && ln -snf /usr/local/node-v8.9.4-linux-x64/bin/forever /usr/bin
+npm install forever -g && ln -snf /usr/local/node-v12.18.4-linux-x64/bin/forever /usr/bin
 ```
 
 #### htop

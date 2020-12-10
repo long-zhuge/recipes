@@ -114,6 +114,9 @@ git push origin --delete <分支>
 
 // 删除本地分支
 git branch -D <分支>
+
+// 删除本地的远程分支
+git branch -r -D origin/<分支>
 ```
 
 #### git merge
