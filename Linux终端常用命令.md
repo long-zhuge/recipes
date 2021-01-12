@@ -223,3 +223,40 @@ ntpdate pool.ntp.org
 ```
 netstat -nat|grep -i "9090"|wc -l
 ```
+
+#### 定时脚本
+
+
+> 创建脚本：test.sh
+
+```
+#!/bin/sh
+
+cur_date=`date +%F` # 获取当前时间
+
+echo $cur_date # 打印当前时间
+```
+
+> 创建定时任务：test.crontab
+
+```
+*/1 * * * * /bin/sh test.sh # 每分钟执行一次定时任务
+```
+
+> 启动定时任务
+
+```
+$ crontab test.crontab
+```
+
+> 查看定时任务列表
+
+```
+$ crontab -l
+```
+
+> 删除定时任务列表
+
+```
+$ crontab -r
+```

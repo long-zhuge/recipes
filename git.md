@@ -257,3 +257,9 @@ $ git fetch --all
 
 // 此时再运行第一条命令就是最新的 tag 版本号
 ```
+
+#### push时要求账号密码
+
+```
+$ git config --global credential.helper store
+```
