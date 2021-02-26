@@ -94,8 +94,11 @@ kill 11815
 > 假设需要修改 html 文件夹下的权限
 
 ```
-// 修改
+// 修改为可读取的权限
 chmod -R 777 html
+
+// 修改为只读的权限
+chmod 666 html
 
 // 查看权限
 cd html
@@ -259,4 +262,16 @@ $ crontab -l
 
 ```
 $ crontab -r
+```
+
+#### 修改ssh端口
+
+```
+// 编辑配置文件
+$ vim /etc/ssh/sshd_config
+
+// 添加 Port3049
+
+// 保存退出后
+$ systemctl restart sshd.service
 ```

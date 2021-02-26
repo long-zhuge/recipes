@@ -38,6 +38,9 @@ $ systemctl enable nginx && systemctl start nginx
 
 // 执行 nginx 操作
 $ nginx -s reload
+
+// 停止
+$  nginx -s stop
 ```
 
 #### 安装 Node

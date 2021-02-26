@@ -20,7 +20,7 @@ $ cd /opt/nexus-3.13.0-01/bin/
 // 注意，启动后需要过一会才能访问到页面，时间可能较久
 $ ./nexus start
 
-// 如果 start 启动不了
+// 如果 start 启动不了，使用如下命令，可能时间较长
 $ ./nexus run &
 
 // 关闭
@@ -44,7 +44,7 @@ $ ./nexus stop
 
 #### Detected execution as "root" user.  This is NOT recommended!
 
-- 将启动脚本 nexus 中的 run_as_root=true 改为 run_as_root=false
+- 将启动脚本 nexus 中的 `run_as_root`=true 改为 `run_as_root`=false
     - vi /opt/nexus-3.13.0-01/bin/nexus
 - 保存文件后退出，并重启 nexus 服务
     - ./nexus stop
@@ -62,3 +62,7 @@ $ ./nexus stop
     nexus - nofile 65536
     ```
     - 修改保存后，重启 nexus 服务
+
+    
+    
+    83e9dbda-9db6-4dba-8864-3c235da8cbdd
