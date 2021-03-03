@@ -275,3 +275,31 @@ $ vim /etc/ssh/sshd_config
 // 保存退出后
 $ systemctl restart sshd.service
 ```
+
+#### 防火墙
+
+```
+// 查看状态
+systemctl status firewalld.service
+
+// 启动
+systemctl start firewalld.service
+
+// 关闭
+systemctl stop firewalld.service
+
+// 检查防火墙开放的端口：防火墙必须开启
+firewall-cmd --permanent --zone=public --list-ports
+
+// 新增端口：需要重启防火墙
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
+
+// 重启防火墙
+firewall-cmd --reload
+
+// 验证开放的端口是否生效
+firewall-cmd --zone=public --query-port=8080/tcp
+
+// 防火墙取消某一开放端口：需要重启防火墙
+firewall-cmd --zone=public --remove-port=9200/tcp --permanent
+```
