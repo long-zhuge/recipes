@@ -276,6 +276,20 @@ $ vim /etc/ssh/sshd_config
 $ systemctl restart sshd.service
 ```
 
+#### systemctl 如何启动、关闭、启用/禁用服务
+
+```
+启动服务：systemctl start xxx.service
+关闭服务：systemctl stop xxx.service
+重启服务：systemctl restart xxx.service
+显示服务的状态：systemctl status xxx.service
+在开机时启用服务：systemctl enable xxx.service
+在开机时禁用服务：systemctl disable xxx.service
+查看服务是否开机启动：systemctl is-enabled xxx.service
+查看已启动的服务列表：systemctl list-unit-files|grep enabled
+查看启动失败的服务列表：systemctl --failed
+```
+
 #### 防火墙
 
 ```
@@ -302,4 +316,23 @@ firewall-cmd --zone=public --query-port=8080/tcp
 
 // 防火墙取消某一开放端口：需要重启防火墙
 firewall-cmd --zone=public --remove-port=9200/tcp --permanent
+```
+
+#### 黑名单过滤
+
+```
+// 查看状态
+systemctl status denyhosts.service
+
+// 关闭
+systemctl stop denyhosts.service
+
+// 启用
+systemctl start denyhosts.service
+```
+
+#### centos统计服务器当前IP连接数
+
+```
+netstat -tun | awk '{print $5}' | cut -d: -f1 |sort | uniq -c | sort -n
 ```
