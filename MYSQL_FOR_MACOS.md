@@ -90,7 +90,7 @@ mysql>
 mysql> FLUSH PRIVILEGES;
 
 // 重置密码，你可以将‘111111’替换为自己需要的密码
-mysql> SET PASSWORD FOR root@'localhost' = PASSWORD('111111');
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY '111111';
 
 // 重新登录，请将原有的终端mysql退出
 $ mysql -uroot -p
@@ -437,3 +437,58 @@ use mysql;
 update user set host = '%' where user = 'root';
 FLUSH PRIVILEGES;
 ```
+
+
+### 查看之前已安装的mysql
+
+```
+$ rpm -qa |grep mysql
+```
+
+## centos8安装 5.7 版本
+
+```
+1. 关闭Centos8中MySQL默认的AppStream仓库：
+sudo dnf remove @mysql
+sudo dnf module reset mysql && sudo dnf module disable mysql
+
+2. 目前还没有EL8版本的MySQL仓库，所以我们这里用EL7的代替，创建一个新的仓库文件
+sudo vi /etc/yum.repos.d/mysql-community.repo
+
+3. 将如下信息写入到文件中
+[mysql57-community]
+name=MySQL 5.7 Community Server
+baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/7/$basearch/
+enabled=1
+gpgcheck=0
+
+[mysql-connectors-community]
+name=MySQL Connectors Community
+baseurl=http://repo.mysql.com/yum/mysql-connectors-community/el/7/$basearch/
+enabled=1
+gpgcheck=0
+
+[mysql-tools-community]
+name=MySQL Tools Community
+baseurl=http://repo.mysql.com/yum/mysql-tools-community/el/7/$basearch/
+enabled=1
+gpgcheck=0
+
+4. 安装mysql
+sudo dnf --enablerepo=mysql57-community install mysql-community-server
+
+5. 设置开启启动
+sudo systemctl enable --now mysqld.service
+
+6. 获取初始密码
+grep 'A temporary password' /var/log/mysqld.log |tail -1
+
+7. 接着开始对mysql进行安全配置，通过MySQL Secure Installation去修改密码、关闭root远程登陆权限,、删除匿名用户、删除测试数据库等
+sudo mysql_secure_installation
+Securing the MySQL server deployment.
+Enter password for user root:
+
+8. 输入刚才获取的初始密码，开始配置
+```
+
+

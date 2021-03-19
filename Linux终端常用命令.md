@@ -336,3 +336,17 @@ systemctl start denyhosts.service
 ```
 netstat -tun | awk '{print $5}' | cut -d: -f1 |sort | uniq -c | sort -n
 ```
+
+ifcfg-lo：开发机下网卡配置文件
+
+```
+DEVICE=lo
+IPADDR=127.0.0.1
+NETMASK=255.0.0.0
+NETWORK=127.0.0.0
+# If you're having problems with gated making 127.0.0.0/8 a martian,
+# you can change this to something else (255.255.255.255, for example)
+BROADCAST=127.255.255.255
+ONBOOT=yes
+NAME=loopback
+```

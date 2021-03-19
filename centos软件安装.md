@@ -93,6 +93,6 @@ $ vim redis.conf
 // 修改
 daemonize=yes
 
-// 保存后重启启动
-$ ./src/redis.server
+// 保存后重启
+$ ./src/redis.server 2>&1 &
 ```
