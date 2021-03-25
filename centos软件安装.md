@@ -96,3 +96,10 @@ daemonize=yes
 // 保存后重启
 $ ./src/redis.server 2>&1 &
 ```
+
+- 报错：DENIED Redis is running in protected mode because protected mode is enabled
+
+```
+// 修改 redis.conf 的第88行
+protected-mode yes 改为 no
+```

@@ -246,7 +246,20 @@ echo $cur_date # 打印当前时间
 */1 * * * * /bin/sh test.sh # 每分钟执行一次定时任务
 ```
 
+> 【首选】编辑任务：crontab -e
+
+可以在现有的任务列表中添加任务，如：
+
+```
+xxxxxx
+*/1 * * * * /bin/sh test.sh
+xxxxxx
+```
+
+
 > 启动定时任务
+
+启动任务后，会覆盖已有的任务列表
 
 ```
 $ crontab test.crontab
@@ -350,3 +363,7 @@ BROADCAST=127.255.255.255
 ONBOOT=yes
 NAME=loopback
 ```
+
+
+
+30 23 * * 6
