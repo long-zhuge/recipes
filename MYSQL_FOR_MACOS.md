@@ -8,6 +8,15 @@
 2. brew 安装 mysql
 	- brew install mysql
 
+### 查看版本
+
+```
+$ mysql -V
+
+// 登录mysql后查看
+MYSQL > select version();
+```
+
 ### 环境变量设置
 
 - 在 mac 下，环境变量位于 /etc/profile 文件中
@@ -445,6 +454,12 @@ FLUSH PRIVILEGES;
 $ rpm -qa |grep mysql
 ```
 
+## centos 安装 
+
+```
+yum -y install mysql-community-server
+```
+
 ## centos8安装 5.7 版本
 
 ```
@@ -491,4 +506,19 @@ Enter password for user root:
 8. 输入刚才获取的初始密码，开始配置
 ```
 
+## 卸载
 
+1. 查看mysql安装：rpm -qa|grep -i mysql
+2. 卸载前关闭mysql服务：systemcel stop mysqld.service
+
+```
+rpm -ev --nodeps xxxx
+```
+3. 查找文件：find / -name mysql
+4. 删除找到的 mysql 文件
+
+## 源数据导入
+
+```
+mysql> source <目标文件.sql>
+```

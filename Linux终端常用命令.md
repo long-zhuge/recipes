@@ -229,52 +229,44 @@ netstat -nat|grep -i "9090"|wc -l
 
 #### 定时脚本
 
+> 基本命令
 
-> 创建脚本：test.sh
+```
+// 运行状态
+service crond status
+
+// 启动
+service crond start
+
+// 停止
+service crond stop
+
+// 编辑定时任务
+crontab -e
+
+// 查看定时任务
+crontab -l
+
+// 删除所有定时任务
+crontab -r
+```
+
+> 假设 /file/java 目录下有个 test.sh 脚本，内容如下：
 
 ```
 #!/bin/sh
 
-cur_date=`date +%F` # 获取当前时间
-
-echo $cur_date # 打印当前时间
+echo 123 >> testFile  ## 在 testFile 文件中写入 123
 ```
 
-> 创建定时任务：test.crontab
+> 编辑定时任务
 
 ```
-*/1 * * * * /bin/sh test.sh # 每分钟执行一次定时任务
-```
-
-> 【首选】编辑任务：crontab -e
-
-可以在现有的任务列表中添加任务，如：
-
-```
-xxxxxx
+# 每分钟执行一次。这样执行定时任务时，test.sh 执行生成的 testFile 文件会在 ~ 目录下，并非在 test.sh 的所在目录。
 */1 * * * * /bin/sh test.sh
-xxxxxx
-```
 
-
-> 启动定时任务
-
-启动任务后，会覆盖已有的任务列表
-
-```
-$ crontab test.crontab
-```
-
-> 查看定时任务列表
-
-```
-$ crontab -l
-```
-
-> 删除定时任务列表
-
-```
-$ crontab -r
+# 正确写法，此时生成的 testFile 会在 /file/java 目录下
+*/1 * * * * cd /file/java;/bin/sh test.sh
 ```
 
 #### 修改ssh端口
@@ -364,6 +356,22 @@ ONBOOT=yes
 NAME=loopback
 ```
 
+#### centos查看系统版本号
+
+```
+cat /etc/redhat-release
+```
+
+#### 打包压缩和解压
+
+```
+$ tar -zcvf <文件名>.tar.gz <要打包的目录>
+
+// 如
+$ tar -zcvf evidence.tar.gz /file/upload/evidence
+
+// 解压
+$ tar xzf evidence.tar.gz
+```
 
 
-30 23 * * 6

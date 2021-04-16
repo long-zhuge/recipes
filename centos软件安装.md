@@ -90,7 +90,7 @@ $ make
 // 后台启动
 $ vim redis.conf
 
-// 修改
+// 修改，使其可以远程登录
 daemonize=yes
 
 // 保存后重启
