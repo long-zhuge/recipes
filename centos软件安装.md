@@ -103,3 +103,61 @@ $ ./src/redis.server 2>&1 &
 // 修改 redis.conf 的第88行
 protected-mode yes 改为 no
 ```
+
+#### 安装 minio
+
+[文档](http://docs.minio.org.cn/docs/)
+
+安装
+
+```
+// 下载
+$ cd /opt
+$ wget http://dl.minio.org.cn/server/minio/release/linux-amd64/minio
+$ chmod +x minio
+
+// 设置后台启动
+$ vim minio.sh
+
+// 写入，保存。假设存储到 /file 目录下
+export MINIO_ROOT_USER=admin
+export MINIO_ROOT_PASSWORD=password
+nohup /opt/minio server /file/minio > minio.log 2>&1 &
+
+// 修改脚本权限
+$ chmod +x minio.sh
+
+// 启动
+$ ./minio.sh
+
+// 访问，需要开放防火墙和安全组，默认端口号 9000
+http://localhost:9000
+```
+
+设置永久访问链接
+
+> 由于 minio 的 share 只有 7天 有效时间，想要设置永久的，需要下载 mc 进行设置
+
+```
+// 下载
+$ cd /opt
+$ wget http://dl.minio.org.cn/client/mc/release/linux-amd64/mc
+
+// 修改脚本权限
+$ chmod +x mc
+
+/*
+ * 添加配置，命令中的参数解释如下：
+ *   minio：当前 minio 安装的路径，如果 mc 和 minio 在同路径下，这如下命令即可
+ *   http://localhost:9000：表示公网访问地址
+ *   admin：minio 账号
+ *   password：minio 密码
+ */ 
+$ ./mc config host add minio http://localhost:9000 admin password --api S3v4
+
+// 设置指定桶的访问权限
+$ ./mc policy set download minio/cdn
+
+// 在 minio 客户端的 cdn 桶下上传 helloword.png 后，可使用链接访问：
+http://localhost:9000/cdn/helloword.png
+```

@@ -375,3 +375,8 @@ $ tar xzf evidence.tar.gz
 ```
 
 
+#### macOS查看 CPU 信息
+
+```
+sudo powermetrics
+```
