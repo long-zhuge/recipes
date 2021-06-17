@@ -161,3 +161,36 @@ $ ./mc policy set download minio/cdn
 // 在 minio 客户端的 cdn 桶下上传 helloword.png 后，可使用链接访问：
 http://localhost:9000/cdn/helloword.png
 ```
+
+创建新用户并赋予权限
+
+```
+// 需要cd到 mc 所在的目录，执行以下命令后，输入 “用户名、密码”，比如我们创建了一个 dev 的用户
+$ ./mc admin user add minio
+
+// 创建配置文件，如：dev.json，内容如下
+{
+  "Version": "2012-10-17", // 该字段固定，请不要修改
+  "Statement": [
+    {
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::cdn/*" // 表示拥有 /cdn 目录下的增删改权限
+      ],
+      "Sid": ""
+    }
+  ]
+}
+
+// 对 minio 写入上面配置文件并生成规则，如下生成了一个 devrule 的规则
+$ ./mc admin policy add minio devrule dev.json
+
+// 将权限规则赋予用户
+$ ./mc admin policy set minio devrule user=dev
+```
