@@ -454,10 +454,26 @@ FLUSH PRIVILEGES;
 $ rpm -qa |grep mysql
 ```
 
-## centos 安装 
+## centos5.7 安装
 
 ```
+// 下载安装包
+wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+
+// 安装源
+yum -y localinstall mysql57-community-release-el7-11.noarch.rpm
+
+// 在线安装
 yum -y install mysql-community-server
+```
+
+修改大小写不敏感
+
+```
+lower_case_table_names=1
+
+// 保存后重启
+service mysqld restart
 ```
 
 ## centos8安装 5.7 版本

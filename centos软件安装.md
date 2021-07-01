@@ -93,8 +93,11 @@ $ vim redis.conf
 // 修改，使其可以远程登录
 daemonize=yes
 
+// 修改密码
+requirepass 123456
+
 // 保存后重启
-$ ./src/redis.server 2>&1 &
+$ ./src/redis.server &
 ```
 
 - 报错：DENIED Redis is running in protected mode because protected mode is enabled
@@ -102,6 +105,20 @@ $ ./src/redis.server 2>&1 &
 ```
 // 修改 redis.conf 的第88行
 protected-mode yes 改为 no
+```
+
+- 报错：server.c:5166:39: error: ‘struct redisServer’ has no member named ‘maxmemory’
+    - 原因：gcc 版本太低
+    
+```
+// 查看版本
+$ gcc -v
+
+// 升级至6.0+
+yum -y install centos-release-scl
+yum -y install devtoolset-9-gcc devtoolset-9-gcc-c++ devtoolset-9-binutils
+ 
+scl enable devtoolset-9 bash
 ```
 
 #### 安装 minio
